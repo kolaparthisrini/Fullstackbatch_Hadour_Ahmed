@@ -1,0 +1,593 @@
+break-30mins---10:30,1:00 to 1:30 timing
+lunch time:3:30pm
+Day 1-June 7th-2023
+==========================
+
+lets focus on installations:
+
+Oracle Jdk 1.8 version
+Eclipse JEE IDE--->Neon/mars version
+
+Mars/helio/gallilieo/Neon versions for IDE
+Java certification: https://education.oracle.com/oracle-certified-professional-java-se-8-programmer/trackp_357
+https://www.eclipse.org/downloads/packages/release/neon/3
+https://www.oracle.com/in/java/technologies/javase/javase8-archive-downloads.html
+https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html
+
+Steps to instll eclipse on linux:
+====================================
+sudo add-apt-repository ppa:lyzardking/ubuntu-make
+sudo apt-get update
+sudo apt-get install ubuntu-make
+umake ide eclipse-jee
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Tools for Fullstack<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Eclipse IDE----> for designing Java Programs---Module1 and module2,Module 6, Module 5,Module 10
+Spring STS or Eclipse IDE----->Spring BOOT----Module3,Module 4,Module 10
+WebStorm/Chrome-----Angular-----Module 7,8,9
+PostMan s/w----For Rest API testing
+SonarQube tool------For code Quality Testing. https://www.sonarsource.com/products/sonarcloud/signup/
+NodeJs-----for Angular Application
+Mysql 5.0 version---for databases https://dev.mysql.com/doc/refman/5.7/en/macos-installation-notes.html,https://dev.mysql.com/doc/refman/5.7/en/linux-installation.html
+============================================================================================
+Basics of Java:
+-----------------
+Java is a programming language.
+Any hardware is controlled through s/w.
+
+>>>>>>>>Thses s/w are designed using C,C++,.net or java.
+>Java is more popular because of platform independency.
+Java comes with 3 editions.
+1)JSE/J2SE: JSE stands for Java Standard Edition.JSE is used for creating desktop apps like ms-office,notepad....
+2)JEE/J2EE: JEE stands for JAva enterprise edition.JEE is used for creating Enterprise apps like banking,insurance...
+3)JME/J2ME:Java Mobile edition.USed for designing mobile apps or can be used for Embedded Systems.
+Embedded systems is a combination of hardware and s/w.
+>>JME is a failure for designing mobile apps.
+
+Latest version of java is 1.19.Industry is using still 1.8.
+>>>>>>>>>>>>>>>>>>>>>>>>>>
+Features of JAva:
+1)Java is secure
+2)robust
+3)Platform independent....etc
+
+
+If s/w is designed using "C/C+:,then that code will not work in All o/s.
+
+If a Programming language supports pointers,then that programming language will not run in all o/s.
+>>In programming languages,every variable will have an address.That address we are calling it as Pointers.
+Java doesnt support pointers.Thats why it is platform independent.
+Java code be executed in any type of operating system,because it is platform independent.
+
+>>>C:\Program Files\Java
+
+TO design any program using java,we need to follow the below way.
+
+Write the code-------->Save the code(save the file with .java)------>Compile the code using java Compiler------>Run the code(.class)
+
+To compile or to run a java code,we need to have JDK  and JVM.In eclipse,Auto compilation feature is enabled by default.
+If we use IDE,no need to compile.
+
+
+Projectname/classname firstletter shouldbe Upper Case.
+We should not use Spaces in file or projectname.
+Always Substring should start with upper case.
+Example:
+Helloworld---not accepted
+HelloWorld----Accepted
+Dont use unnecessarily special symbols like &~@$%^*().
+Always code shld be created in a package.We should avoid default packages.
+Package should follow below syntax:
+Example: com.projectname.modulename
+
+Package names shld not be in upper case.
+>>We can create as many packages as we can.There is no limit on no of packages.
+
+Example:
+
+Assume you are working on 4 requirements.
+4 difrrent packages shld be created.
+
+Assume projectname is Maheshbank.
+com.maheshbank.fundtrasfer
+com.maheshbank.payments
+Note: Default is not allowed in projects.
+>>>>>>>>>>>>>>>>>>>>>>>>.
+
+Library : library is a type of package with predefined methods,classes with logic.
+libraries are of 2 types.
+1)predefined :oracle is giving to us by default.
+2)Userdefined--means developer will create.
+
+Steps for running code:
+1)Write the code in a file and save the file using .java.
+2)Compile the code using javac command.
+3)After compiling,we will get .class file which is bytecode.
+4)After that run the .class file using java command.
+
+Bytecode: bytecode is a combination of o,1 and special symbols.
+
+Note: Always public classname and filename should be same.
+
+JVM stands for java virtual machine.JVM is used for running the code.
+
+Command to compile: javac filename.java
+Running: java filename
+
+
+Points: installed Eclipse,set the jdk path,testing java program,features of java,compiling the code,running the code on IDE and command prompt,bytecode,package creation,naming rules for project creation,type s of java editions.
+--------------------------------------------------------------------------------------------------------------
+Comments:
+
+single line comment:Syntax://
+Multi line comments:
+Syntax:
+/*
+text1
+text2
+
+*/
+Note: Dont use predefined keywords in comments.
+Always make sure your comments are meanining full.dont use your language which is diffrent while writing.
+Make sure you are adding author of the code.
+
+>Makesure you are formating your code before commenting.
+Jira is a issue tracking tool which is mainly used in development.
+>
+Variables and datatypes
+loops 
+String API
+condtional staments
+command line arguments---important while deployments
+
+OOPS,collections,multithreading basics
+Variables and datatypes:
+========================
+>variable:
+============
+a variable is a container/storage for storing your data temporarly.
+>Evry variable will have a datatype.
+>a variable cannot exist without datatype.
+>variable shld be named properly and it should be meaningfull.
+
+Syntax for declaring a variable:
+
+Datatype variablename;
+
+Syntax for defining or storing value in a variable:
+
+Datatype <variablename> = <value>
+
+Example: int a = 90;
+
+Datatype specifies the type of data that we want to store in a variable.
+
+bit means either 1 or 0
+1 byte = 8 bits
+bytes= no of bits/8
+
+Primitive datatypes:
+---------------------------
+boolean-------1 bit---default value is false
+char----------2 bytes---default value is \u0000
+byte-------1 byte---default value is 0
+short---2 bytes---default value is 0
+int-----4 bytes---default value is 0
+long------8 bytes---default value is 0L
+float----4 bytes---default value is 0.0f
+double-------8 bytes---default value is 0.0
+
+
+boolean a = true;
+System.out.println(a);
+
+
+Non primitive datatypes:
+-----------------------
+class,interfaces,String and arrays
+
+
+>System.out.println()
+System is predefined class.
+out is a static reference
+println is a predefined method.
+
+out means output ie monitor
+in means input ie keyboard
+error means error
+33
+i want to give a value and b vaule at runtime?
+
+>>Scanner class is mainly for inserting values at runtime.
+
+Once scanner is opened,we need to close it.
+
+Note: As per best practices,we need to close the scanner object.
+
+In java,if we want to make a variable a constant,then we need to use the keyword "final".
+
+final int con;//declared
+con = 90;//defined
+		
+final int con = 90;//delcared and defined
+
+--------------------------------
+String API
+
+String is a group of characters.
+>Strings are represented using "".
+>>Character are represented using ''.
+
+I/p: apple
+o/p: APPLE
+
+https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+
+String had given us so many predefined methods to deal with conversions.
+
+1)
+String t = "Skolaparthi";
+i/p: a
+o/p: available
+
+i/p: z
+o/p: Not available
+
+
+https://github.com/kolaparthisrini/Fullstackbatch_Hadour_Ahmed/blob/main/Day1%20Exercise
+Add the comments
+================================================================
+Loops and conditional Statements:
+---------------------------------
+>
+Conditional Statements:
+---------------------------
+when even we want to perform conditional checkings.
+1)if
+if condition will check for true or false.
+2)if-else
+3)switch
+
+i need to check whether the given value is > 100 or not.
+Note: At a time only one block will be executed in if-else.
+
+if()
+{
+if()
+{
+}
+}
+
+
+Switch is mainly for checking/testing multiple conditions.
+Switch is replacement for nested-ifs.
+Syntax:
+
+switch(expression)
+{
+case value:
+//statements
+break;
+
+case value:
+//statements
+break;
+
+case value:
+//statements
+break;
+
+default:
+//statements
+}
+
+using switch:
+
+i/p is Apple
+o/p:Apple is matched
+
+Switch Rules:
+=============
+>switch accepts integeres,strings and enums from >1.7.0 version onwards.
+enums are like classes but it is used for creating multiple constants.
+>any no of switch cases can be written.
+>only one default is allowed.
+>break statement is optional in switch,but removing break might cause your logic change.
+>Every case shld have only 1 break.
+>break shld be last statement in case.
+>No break is allowed in default.
+>break is not recommended in default case.It will never throw any error message.
+
+Note: switch within switch is accepted.
+
+Loops:
+======
+Loops are used for repeating as task until condition fails.
+1)for---to
+2)while
+
+in while first condition is checked and then body is executed.
+Syntax:
+
+while(condition)
+{
+
+increment/decrement values;
+}
+0 1 2 3 4 5 6 7 8 9 10
+
+
+3)do-while
+
+reverse of while is do while.
+start;
+do
+{
+} while(condition);
+
+first body is executed and then condition is checked.
+
+display 2 5 8 11
+
+
+I want to display 2 table.
+
+2*1=2
+2*2=4
+2*3=6
+2*10=20
+
++ operator is used for string concatenation.
+4)for-each
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>To write a logic,we neeed to have atleast 1 class.
+>class will have functions.
+>A class can have as many functions.There is not limit.
+>A class which is declared as public should have main method.
+>Main is the starting point of the program.
+
+
+package com.training.basics;
+
+public class Addition {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+===================
+public class Addition {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}--------------------------------->invalid
+
+ class Addition {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}------------------------------------>invalid,because no public infornt of class.
+
+===========================
+public class Addition {
+
+	
+
+}------>not valid.because if a class is declared as public ,then main method is mandetory.
+
+>>In a java file,we cannot have 2 classes with public mode.
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
