@@ -1,1 +1,11 @@
+1)Write a Java program to convert minutes into years and days.
+2)Write a Java program to check whether given no is even no or not.
+3)Write a Java program to reverse the string?
+i/p: JAVA
+o/p: AVAJ
 
+Logic should work for any type of input string.
+4)Program to displat 6 table in reverse order.
+5)Write a Java program to swap 2 variables.
+Example: a=90 b=89
+after swapping: a=89 b=90
