@@ -1,0 +1,30 @@
+1)Java program to display the output on below .
+A
+AB
+ABC
+ABCD
+
+2)program to perform compount interest and simple interest using OOPS.
+
+3)Based on developers input,my code should display the type of operating system that i am using.
+java OSExample osname
+
+4)write a java program to display in below format.I need till 6 digits
+i/p: 3456
+o/p: Three Thousand Four hundred and Fifty Six
+
+5)Write a Java program to create Userdefined Exception.
+create an Exception with the name "SriniException".
+
+6)write a Java program to print in below format.
+A1B2C3D4.....Z26
+7)Program to swap 2 numbers without using 3rd variable with single expression.
+8)Count no of A letters,B letters and  C letters in below paragraph.
+
+i/p:Based on developers input,my code should display the type of operating system that i am using.Based on developers input,my code should display the type of operating system that i am using.Based on developers input,my code should display the type of operating system that i am using.
+O/p:No of 'A':40
+    No of 'B':34
+	
+9)write a program to remove spaces from below string.
+i/p: My Mobile is 
+o/p: Mymobileis
