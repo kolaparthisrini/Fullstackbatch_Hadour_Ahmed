@@ -339,6 +339,1398 @@ I want to display 2 table.
 
 + operator is used for string concatenation.
 4)for-each
+========================================================================================
+Day 2-June 8th-2023
+----------------------
+Observations form your exercises:
+--------------------------------
+Positives: 
+code is clear
+you had written comments for few exercises.
+
+Negitive:
+for few example no comments.
+
+Over All: Very good
+
+sLOGAN:mORE PRACTICE mORE PERFECTION
+>>>>>>>>>>>>>>>>>>>>
+>for loops-10---completed
+break and continue---completed
+>for-each--10---completed
+>OOPS concepts---2
+>collections-2:30
+>Basics of multi threading
+>java8 new features
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+For Loop:
+===========
+initialization
+While(condition)
+{
+
+increment/decrement;
+}
+
+
+for loop syntax:
+for(initialization;condition;increment/decrement)
+{
+//statements
+}
+diffrence is mainly syntax.
+Using for loop i want to display 1.....100
+
+>>i dont want to display 7 from following series.
+12345678910
+o/p:1234568910
+
+I need to display  below series;
+
+1*2*3*4*5* using for loop
+
+
+Z Y X ........A
+
+Evry alphabet will have asci code.
+
+Type casting: converting from one datatype to another is called as type cast.
+(char)a
+
+Syntax:
+(target datatype)current datatype
+
+>1 2 3 4 5 End of the Loop
+
+Break: break is for breaking/coming out of the loop.
+Continue: this is for ignoring the loop based on condition.Continue will not break loop.
+Note: break and continue cannot be used at same time.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Array:
+======
+
+int a = 90;//means ata time we can store only one value.
+what if we want to store more value?
+sol)Arrays and collections.
+Arrays are mainly used for storing similar type of data.
+
+1 2 3 4 5 6  8 ===>Arrays
+1 q 345 ggg=====>collections
+
+Syntax: datatype[] arr or datatype arr[]
+
+arrays will have index
+Always index starts with 0.
+
+index cannot be negitive.But in python,index can be negitive.
+
+For-each loop:
+=============
+>is similar like for loop.But it is more advanced and simplied version of for loop.
+>used frquently in bigdata projects and data engineering projects.
+>syntax:
+
+for(datatype var: array)
+{
+
+//statements
+}
+
+for-each is mainly used for arrays and collections.
+>>>>>>
+
+Assume there is an character array with 7 chracters.I want to copy the array data to another array.
+Write a program for the above requirement.
+
+To copy an array from one to another array,use predefined method "arraycopy".
+System.arraycopy(source array,index position of source array,destination array,destination index position,no of elements to be copied);
+>>Some times ,we need tpo clone an array.
+clone means a copy of an array.
+
+---------------------------
+Methods and command line arguments.
+
+command line arguments: this feature is used for passing some values to main method.
+	public static void main(String[] args)-----main is method,the parameters are called as "command line arguments"
+	
+	parameters or arguments both are same.
+	
+	arguments is alias name for parameter.
+	
+>I want to pass values from one function to another function.
+void means no return.
+
+Functions:
+===========
+>function is a group os statements.
+Every function will have a return type.if not void.
+>Every function will have { }.
+>Functions are of  2 types.
+1)userdefined
+2)predefined. Example: arraycopy,println
+
+method vs function?functions will return values.
+methods wont return any value.
+
+Task1:
+Write a java program using functions.2 table display and reverse string.
+
+Exception Handling:
+====================
+Any operation on null leads to NullpointerException.
+>if any exception arises,then program execution will stop automatically.
+>if developer things,that code might throw exception or error message,then he need to surronder the code with try and catch blocks.
+
+SYNTAX:
+	try
+	{
+	}
+	catch(Exception class)
+	{
+	}
+
+
+>Finally block is mandetory while dealing with databases,io,networking...etc.
+>per try block,we ca have only 1 finally.
+
+try shld be followed with catch or finally.
+>1 try block can have multiple catch blocks.
+>per try only 1 finally is allowed.
+>in between try and finally or catch,we shld not write any logic.
+>try and catch can be there even in finally.
+> we can also write try and catch even in catch block.
+>try with in try is also accepted.
+>dont use try and catch in loops unnecessarily.
+>>In object oriented programming languages,Object is the base class.
+Every class will have parent.
+
+Example:
+
+my fathers father
+!
+Father--base means parent
+!
+Srinivas
+
+>>Unnecessarily dont use "Exception base class".If suitations demand then only use Base Exception class.
+Exceptions which are thrown by JVM at compile time is called as checked/compile time exceptions.
+Exceptions which are thrown by JVM at run time is called as un-checked/run time exceptions.
+Errors as Well.errors are related to hardware issues like memory issue,heap issues...etc
+/
+******************Imp**************
+1) try without catch,is it possible?
+ans)yes.but finally shld be there.
+
+try{
+}
+finally{
+}
+
+2) catch  without try,is it possible?
+ans) No
+
+3)can i have multiple catchs?
+ans)yes
+
+4)can i have multiple finally for try block?
+ans)no
+
+5)can i use break in try block?
+ans) yes,but with loop.
+break shld be used in combination with loops and switch.
+
+6)can i use break in between try  and catch block?
+ans)no
+
+7)
+finally{
+}
+catch()
+{
+}
+try
+{
+}
+ans) not accepted
+
+8)try and catch in finally block?
+ans)yes
+
+Assertions are mainly used for testing the results.
+
+a=9,b=9;
+add(int a,int b)
+{
+return a-b;
+}
+
+Assertions will check expected result with achived results.
+Expected:18
+Achived:0
+if not matching,it will be RED.
+if matching it will be GREEN.
+if a persons age is >=18,then he is eligible to right to vote.
+
+sudo apt install mysql-server
+
+To see msg.
+
+1)Assertions shld be combined with Junit.
+2)Enable assertion feature in VM.by default assertions are disabled in java.
+java -ea
+ea---enable assertions
+disable assertions: java -da
+--------------------------------------------------
+OOPS concepst in Java
+Typecastings
+==========================
+>OOPS stands for object orineted Programming Synopsis.
+C is a Structured Programming language.We are going to write logic in functions.
+C++ is object based Programming Language..
+Java,C#,eiffel,smalltalk these are pure object oriented==>We are going to write logic in functions which are part of 
+classes.
+>Any programming language which supports below feature can be called as Object oritend Programming language.
+
+On which basis can we say a programming language is Ooriented?
+ans) your language shld support:Classes,Objects,Inheritance,Abstraction,Polymorphism and Message passing.
+
+Any thing which is physically visible is called as Object.
+Every object will have SBI.
+S---buttons
+B---Evry button will have functionality.
+I--->Identity.means name.K9 Pro-Max Android 9.0 Projector
+
+
+SBI for switch.
+
+Identity is switch
+behaviour---fan rotating
+state--on or off
+
+Class:A class is a combination of behaviours and states.
+
+
+In java to create a class,we will use the keyword "class".
+
+
+in cars we have sports cars,luxory cars and normal cars.
+
+
+All above are beloinging to the class Cars.
+Syntax:
+
+<access specifier> class <classname>{
+
+//statements
+
+}
+
+capgemini---we write classes below main method.
+
+>memory is not allocated to class by default.Once if we create an object then only memory will be allocated.
+-A class is useless with out object.
+-An object cannot exist with out class.
+-A class can exist wihtout object.
+-we can have as many clases as we can.No limit.But only one public class is allowed.
+Example
+
+
+To create an object,below is the syntax:
+
+<classname> refrencevariable = new <classname>();
+new will allocate memory in heap.
+
+Always make sure predefined names can be used as a varaible.
+
+
+Can i name my self as rocket?
+
+
+Always objects will be saved in Heap memory.
+
+>>Always variables in a class shld be private.
+methods shld be public.
+
+public means from anywhere from your code you can access.
+private means you can access only from your class.
+>>Every object will have address.
+>Create a java program for additon and even numbers using OOPS concepts.
+>meemory for an class allocated only through object.
+
+if we want to see memory allocation and cpu utilization,we can see using JvisualVM tool.This tool is available under bin folder of your jdk.
+There might be some isssues in MAC while viewing the Jvisual VM.
+
+Alternatives: New relic,Appdynamics,Datadog,sentry.....etc
+
+USing Appdynamics,we can monitor,servers,java app,databases and cloud.
+----------------------------
+Class and object-----completed
+Constructors:A constrcutor is a function whose name is same as class name.
+Constructors wont return any value.
+>this is used mainly for initializing class variable.
+Overloading----function and constructor overloading
+Inheritance
+Polymorphsim
+un-named blocks---completed
+
+Any variable which you declare in a class is called as class level variable.
+Any variable which you declare in a method is called as method level variable.
+
+---------------------------------
+Calculator c= new Calculator();
+c is object or reference.
+When constructors are called?
+constructors are called automatically after creating an object.
+
+>in programming languages,space is a character.
+And each symbol is a character.
+We cannot have 2 constructor with same parameters.
+
+Overloading: Overloading means a function or a constructor with same name and difffrent parameters.
+>functions and constructors can be overloaded.But classes cannot.
+
+Write a java program to multiply 2 numbers and convert text to lowercase using constructor overloading.
+Note: Always unnamed blocks will be executed first and then constructor will be executed.
+
+Static: static is high priority.It is like VIP.
+
+Any thing which is declared as static will be loaded first into memory.
+
+Non static:non static means objects.------low priority
+Non static will be loaded at last.
+
+static int a =90;--first
+int w=89;--last
+
+static contenst doent know anything about non static.
+Non static contents knows static.
+
+from a static block,we cannot call object.Unnamed blocks will be executed when we create an object.
+
+static blocks---------unnamed blocks------constructors------functions
+L---------->Right
+
+>>>>>Rule: try to avoid static and unamed blocks in projects,because it creates confusion to developers.
+-------------------------------
+
+Inheritance: Process of getting the properties of base class to child class is called as inheritance.
+>to work on inheritance,we need to have atleast 2 classes.
+>to acheive inheritance we will use the keyword "extends".
+> by default all claases inherits the properties fom Object class.
+Object is the basee class in JAva.
+
+Father--base--parent
+|
+srinivas--childclass
+Note: private variable are methods cannot be inherited.
+Access specifieers: private,public and protected.
+child class can access base class methods.
+
+>>>Overriding: Overriding means a function with same name,same parameter but in diffrent classes.
+
+Note: super is a keyword,which points to base class.
+
+To call parent class method from child class,then we need to use "Super" keyword.
+Syntax: super.methodname();
+
+Static methodss should be called using classname.
+syntax:
+
+classname.methodname();
+>>A constructor cannot be static.
+>>Overloading or overiding  feature is not applicable for static.
+
+https://github.com/kolaparthisrini/Fullstackbatch_Hadour_Ahmed/blob/main/Day2_Exercises/Day2
+
+mysql5.x
+Spring STS
+postman
+-----------------------------------------------------------------------------
+Day3(june 12th):
+==================
+>interfaces and abstract  classes,inheritance exercises and example
+collections
+jdbc--introduction and one program
+JPA---introduction
+
+Concrete class:
+A class with concrete methods is called as concrete class.
+>We can create an object for concrete class.
+
+Abstract class/partially abstract class:
+A class with concrete  methods or atleast one abstract method is called as abstract class.
+>We cannot create an object for Abstract class.
+
+Fully abstract class:
+A class with fully abstract methods is called as fully abstract class.
+>>We cannot create an object for fully Abstract class.
+>a method is declareed as abstract,by using abstract keyword.
+
+
+If we dont the requirement clearly,then better to go with abstract classes.
+If we are clear about requirement clearly,then better to go with concrete classes.
+
+>>A class can be asbtract ny delcaring abstract infront of class.Even though class is abstract,we need to declare the required methods as abstract.
+
+Abstract method: method without logic or body is called as Abstract method.
+concrete method: method with logic or body is called as concrete method.
+
+<Jdk1.8
+Interface:An interface is similar like a class but with only abstract methods.
+
+Syntax: interface <interfacename>
+{
+
+// abstract methods.
+}
+
+When to use interface and when to use class.
+class: If we understand all requirements and clear about the implementation,then only go with class.
+Interface: Assume,customer requirements are changing frequently,and we are not clear about the logic,then use interfaces.
+
+Always coding designing should start with interfaces.
+
+1)interfaces---->abstract classes---->concrete classes
+
+or 
+
+2)interfaces---->concrete classes
+
+on 12th customer gave requirement
+on 13th customer modified requirement
+?
+abstract
+>if we want to write implementation for interface methods then you class should implement interface.
+implements is a keyword.
+
+>>We cannot create an object for interface.We can create obj for the implementation class.
+>>An interface can extend another interface.
+Rules:
+In projects,we shld not write/delcare interface and implementation class in same file.---->not recommended
+Interfaces shld be in different package and implementation classes shld be in different package---->recommended.
+
+For every interface comments and documentation shld be done.
+
+From jdk1.8 onwards,we can also have concrete method in interface.We can also have static and default methods in interface from jdk1.8 onwards.
+
+>An interface can have constants.By default all constants are static in interface.
+>>>>How do we can achieve abstraction in java? ans)interfaces.
+===========================================
+Collections-20%
+------------
+>Array: an array is a group of silimar datatypes.
+int a[]={22,33,"sss"};---wrong
+Assume were you wan to store diffrent types of values?
+sol)collections.
+>>Interfaces in collections:
+collection,set,map,queue,List......etc
+
+>>collection is an interface.It is part of util package.
+>>All methods in collection interface are abstract.
+>In collection,we are going to store only objects,no primitive types.
+
+Example:
+int a =90; //primitive datatype
+Integer a =90;
+or Integer a= new Integer(90);//Object
+char--Character
+int---Integer
+float----Float
+long-----Long
+
+>>parseInt will convert string to integer.
+isDigit is used for checking whether the stored value is number or not.If number it will be true.
+isDigit will not do type casting.It will check whether it is no or character.
+
+>>In java,for evry class Object is a Base class.
+>>Evry object will have hashcode.
+>eevry object can be cloned ie duplicated.
+>>Any no of objects can be pushed to collection.No limit.
+clone() means copy
+>>HAshset:
+===========
+>>HAshset doent allow duplicates.
+it will never through error msg in case of duplicates.Simply it will ignore.
+>>Hashset allows null values.
+>>Hashset doent maintain insertion order of elements.
+>hashset works on hashing algorityhm.
+To display elements in collections we can use below ways:
+1)using for each or any loop
+2)Iterator
+
+hasNext will check whether collectin has values or not.If values are available it will be true
+otherwise false.
+next() method will mpove your courser and then it will display the value.
+>While dealing with null,please surround your code with try and catch.
+
+
+Exercise1:
+add 1 to 10 numbers into Hashset using loops and display the values in hashset using iterator.
+
+if we want to insert specific type of values ,then we need to use generics.
+Syntax:<datatype>
+Example:<Integer>
+
+Exercise 2:
+add 1 to 10 numbers into Hashset using loops and display the values in hashset in reverse order.
+
+>>Treeset---completed
+>HashMap
+>Hashset(completed)
+>TreeMap
+>Vector
+>ArrayList
+=============
+Treeset:
+------------
+>will not allow duplicates.
+>elements will be displayed in ascending order.
+>When we try to insert null values and then ruun the program,it will throw NULLPOINTER Eception.
+>In treeset,always insert similar datatypes,otherwise it will throw classcast exception.
+Treeset is faster than hashset in terms of performance and searching.
+
+>Amazon uses collection concept internally for ADDing to  Cart feature.it uses HAshmap.
+
+ArrayList:
+----------
+>Once array size is given,it is fixed.We cannot insert more than the array size.
+>Arraylist is like array but its size is dynamic.it can grow and it can shrink.
+int a[]= new int[3];
+>Arraylist allows duplicates.
+>Arraylist is slow when it comes to perfomance on manipulations.
+>Arraylist maintains insertion order.
+>>Arraylist is not syncronized ie not thread safe.Data will be corrupted if all are trying to access.
+
+
+Assume there is suitation where we need to convert arraylist to array.Now what is the process to do that?
+Ans)toArray()
+
+toArray() is used for convert arraylist to array.
+
+Question 1)Assume there is a Arraylist with multiple duplicate values.Design a program which should remove duplicates from collection.
+
+Vector:
+=======
+>>Vector is very old class which was relased with jdk1.2.
+>>Vector is similar like arraylist but it is thread safe.
+>>will allow duplicates.
+>>Order is maintained.
+https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html
+
+HashMap:*******************
+=======
+>>Hashmap is not syncronized.
+>In hashmap,we are going to insert data in the form of keys and values.
+>Allows null elements but we shld have only 1 null key.
+>>All keys are unique.
+>>maintains no order.
+
+key will be product code
+value will be price of the product
+
+Hashtable:
+==========
+>>hashtable is syncronized and it is old class
+>>hashtable contains unique elements.
+>doent allow null key or null values.
+
+
+Treemap
+=======
+>>contains keys and values.
+>contains unique elements
+>>cannot jave null key but can have multiple null values.
+>>order is maintained
+
+Any collection with  name Tree maintain order ie ascending order.
+==========================================================================================
+JPA
+-----
+Prerequisite: JDbc
+
+JDBC: jdbc stands for java database connectivity.
+
+C--create
+R---read
+U----update
+D--delete
+>jdbc is used for connecting and performing crud operations on databases from JAva.
+>before jdbc ,we are having ODBC.ODBC stands for open databse connectivity.odbc is not platform independent.thats why odbc is a failure.ODBC is writtened in C++.
+>>jdbc apis are written in java.So it is platform independent.
+>currently 4.3 is version of jdbc.
+
+Drawbacks:
+1)slow
+2)drivers are needed based on database.
+3)High end network shld be there.
+
+ODBC----->JDBC----->JPA
+
+>>Driver: is a software program which will connect java app to any type of database.
+device drivers
+
+Using jdbc ,if we want to conenct to db,we are having 4 types of drivers.
+1)JDBC-odbc bridge driver/Type1(failure)
+2)Native driver/Type2 driver(failure)
+3)net work protocl/Type3 driver driver(failure)
+4)Thin driver/Type4 driver---in market is famous
+
+TO design any program using jdbc follow below steps.
+1)Connect to database using db credentials,ipaddress and port no.
+2)once connect is established,write sql query to extract.
+3)once results are fetched from database,display it.
+4)close the connection
+Day4(JPA) 13th June:
+========================
+Mysql: localhost
+Default port of mysql: 3306
+Default username: root
+
+Below is the command to view list of databases in mysql:
+show databases;
+>>
+sudo apt install mysql-server
+mysql --version
+sudo mysql_secure_installation
+sudo mysql -u root
+
+>>>>To work on jdbc,we need some dependencies ie jar files.TO deals with jars and to run and build the app,we are going to use MAVEN tool.
+IN maven,
+groupid means package name
+artifactid means projectname.
+
+>>MAven is a build tool.If we want to build any java project,we can do that using maven.
+Maven is used mainly in microservices,cloud and fullstack developments.
+>>>>Advantages of Maven:
+>Using maven we can build the project.
+>Maven can download dependencies automatically.
+>it can handle transitive dependencies in proper way.
+>Dependency management is simplified using maven.
+>Maven can build the project using different profiles.
+......etc
+
+When we want to work on third party tools,then we need to download third party jar files.Without those jar file,we can write the code.
+
+Example: I want to create a pdf file using java.
+
+Using java can we crreate pdf file directly? no.then we need to use third party tools/vendor jars.
+jar---3.0
+
+Steps for adding vendor jars  manual Approach:
+----------------------------------------------
+1)Identify the vendor library.
+2)download the specific version of library
+3)Add the jar file to build path>configure build path>Add External Jars
+4)and then click ok.
+
+
+Assume you are working in banking project for which you are using 2100 jars.then how much time will it take to add?
+ans)time consuming task4.0
+
+After 3 days customer asked to change the jar version?
+
+>When we migrate the project from one server to another server,dependencies might fail because of path issues.To handle such type of suitations,we use Maven.
+
+In maveen,we are having a configuration file withthe name pom.xml.
+In pom.xml we are going to going to write info about your jar file.
+
+>Maven is having its own public repository for jars.
+https://mvnrepository.com/
+
+To connect a java app to database,we need to follow below steps:
+1)Load Jdbc driver class(type4 driver).==>Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+class.forname will load "sun.jdbc.odbc.JdbcOdbcDriver"  driver into memory
+2)Establish connection to database
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/training","root","mysql");
+3)create a statement
+Statement st = con.createStatement();
+4)Execute Sql queries on db
+st.executeQuery("select * from employee");
+5)Process the resultset
+Whatever output we are getting after running executeQuery shld be stored ina collection called as "resultSet"
+ResultSet rs= st.executeQuery("select * from employee");
+while(rs.next())
+{
+}
+
+6)close the connection with db
+
+rs.close();//close resultset
+st.close();//staetement shld be closed
+con.close();//connection shld be closed
+
+In java varchar means string.
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'PASSWORD_HERE'
+
+jdbc app is unable to connect to mysql because the jdbc app is not a super user.
+
+Mysql will check whether you are super user or normal user.
+super user--means super admin
+normal user----developer
+
+Super user permissions are diffrent and normal user permissions are diffrent.
+
+jdbc----------->driver-------------->mysql
+
+>>James --salary shld be changed to 9300
+Existing: 3334 id is 1
+
+>>In jdbc we are having 3 types of Statements to run your sql queries.
+1)Statement: is prone to attack
+2)PreparedStatement: 
+>use this statement to push runtime inputs to your query.
+>Prepared statements can avoid SQL injections.
+>readability is good
+3)CallableStatement:
+>CallableStatement is used for calling db stored procedures and functions.
+? means it is a placholder.
+
+>>In  databases,we are BLOB,CLOB and NCLOB datatypes.
+BLOB=>binary large object.When we want to store images/audio/video files.Example: limit is 2gb
+CLOB=>character large object->i want to store resume/pdf/docs.Example: limit is 1gb
+NCLOB==> 'n ' no of character large objects
+
+blob,clob,nclob are called as large objects.
+>>In realtime,very rarely we use above.instead we will use Hadoop or cloud.
+Youtube using apache Kafka tool and Hadoop for live videos and live streaming.
+>Hadoop uses internally large objects.
+
+if you had worked on PL/sql components,then callable statements are helpful.
+
+Req: write a java program which should read data from excel sheet and then it shld insert the data in sheeet to database.
+
+====================================================================================================================
+JPA
+====
+>jpa stands for java persistance API.this is used for performing CRUD operations.
+>JPA is not a technology or tool.It is a specification.
+>Specification means rules and regulations to design code for backend.
+
+select * from tab;---this works in oracle.in mysql it wont work.
+
+SQL Queries are not same for all databases.differebt dbs will have diffrent syntaxes.
+
+hadour ----13th june Example1:	
+Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "mysql");
+			//String sql = "update employee set salary = 9300 where id=1";
+			String sql = "update employee set salary = ? where id= ?";
+			st = con.prepareStatement(sql);
+			System.out.println("Enter Salary:");
+			st.setInt(1,s.nextInt());
+			System.out.println("Enter record-id:");
+			st.setInt(2,s.nextInt());
+			st.execute();
+>>
+Class.forName("com.oracle.jdbc.Driver");//changes
+			con = DriverManager.getConnection("jdbc:xe://localhost:/training", "root", "mysql");//changes
+			//String sql = "update employee set salary = 9300 where id=1";
+			String sql = "update employee set salary = ? where id= ?";
+			st = con.prepareStatement(sql);
+			System.out.println("Enter Salary:");
+			st.setInt(1,s.nextInt());
+			System.out.println("Enter record-id:");
+			st.setInt(2,s.nextInt());
+			st.execute();	
+>>if we use jdbc we need to change the code,when database changes,but if we use JPA no need to change code.only change db details.
+
+>>we had written code for oracle.---schema is runnig in server1 192.34.3.12
+
+lets migrate the code to new server ,server2 198.21.33.55
+
+challenges:
+1)db schema shld be moved
+2)data dump shld be taken and then moved to target db.
+
+>JPA can create schema automatically.Auto schema generation
+>ORM--object relation mapping.
+
+convert class to table  and table to class.
+ 
+ credentials:
+ username password
+ 
+ 
+ class Credentials
+ {
+ private String username;
+ private String password;
+ }
+
+Using JPA Api's,we are going to persist and retrive data from dbs.
+
+Who is implementing JPA?
+ans)Hibernate,toplink,ibatis....etc
+
+Hibernate is implementaion of JPA.
+
+In hibernate,b we need to create a pojo class for the same table.
+
+Assume there is a table with name Address and column "fullname",streetno and pincode
+
+
+POJO: pojo stands for plain old java objects.
+
+Rules: A class can be pojo,if it follows below rules.
+1)Shld not implement any interface
+2)variables shld be private
+3)Methods shld be public
+4)pojo classes hld not extend other classes expect Object class.
+5)We shld not use static methods or static.
+6)for every varaible we shld have setters and getter methods.
+7)Always make sure pojo classes are created sepretly in a new package.It shld not be in default package.
+setter method will start with set.
+getter method will start with get
+
+To design any program in Hibernate,we need to have below files:
+1)Pojo classes
+2)Helper classes(if required)
+3)hibernate.cfg.xml file---src/main/resources
+4)Test class
+5)DAO class
+
+Note:  all above files shld be placed in separate packages.if we place all files in same package then code wont work.
+
+hibernate.cfg.xml:
+=================
+cfg stands for configuration.
+>in hibernate.cfg ,we are going to add database metadata.
+db meta data means db ipaddress,port no,username,password,schemaname...etc
+
+DAO:
+======
+>DAO stands for data access object.
+>dao itself is a design pattern for databases
+>in DAO we are going to write the required logic to access db.
+>DaI stands for data access interfaces.we need tto create new package for dai.
+POJO+DAO+DAI
+
+
+Above is the project structure for Hibernate.
+
+for reading the data from excel sheet use APAche POI library.
+
+
+Hibernate annotaions
+crud operations
+cache in hibernate
+native queries
+Hql queries
+relationships and collections in hibernate
+criteria api
+best practices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(QUERY);) {
+         // Extract data from result set
+         while (rs.next()) {
+            // Retrieve by column name
+            System.out.print("ID: " + rs.getInt("id"));
+            System.out.print(", Age: " + rs.getInt("age"));
+            System.out.print(", First: " + rs.getString("first"));
+            System.out.println(", Last: " + rs.getString("last"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day5(Spring MVC  and Springboot):
+==========================
+
+Day6(Springboot andd Rest API):
+==============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
