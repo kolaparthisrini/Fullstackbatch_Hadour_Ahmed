@@ -1175,7 +1175,7 @@ Rules: A class can be pojo,if it follows below rules.
 1)Shld not implement any interface
 2)variables shld be private
 3)Methods shld be public
-4)pojo classes hld not extend other classes expect Object class.
+4)pojo classes shld not extend other classes expect Object class.
 5)We shld not use static methods or static.
 6)for every varaible we shld have setters and getter methods.
 7)Always make sure pojo classes are created sepretly in a new package.It shld not be in default package.
@@ -1219,6 +1219,388 @@ Hql queries
 relationships and collections in hibernate
 criteria api
 best practices
+
+Day5(JPA) 14th June:
+======================
+>In this training,we are going to use Hibernate version.LAtest is 6 but not stable.https://hibernate.org/
+> In projects,hibernate.cfg.xml file will be provided by either customer or architect or manager.
+>IN hibernate,we can have as many cfg files,but only file will active while running the app.
+>>src/main/resources is the location for cfg files.
+>https://docs.jboss.org/hibernate/orm/3.2/api/org/hibernate/Criteria.html
+
+Assume customer had shared a java project which is not a maven.Then how do you convert existing project to maven project?
+Ans)Right click on project>Go to configure>click convert to maven Project.
+
+>POJO
+DAO
+util
+>In projects,we will never provide db credentials in cf file.How to handle this suitation?
+solution 1)Provide encrypted password
+Solution 2)keep your credentials in Vault server and connect vault server with hibernate app.---costly processs
+Solution 3)Keep crendentials in cloud/github and connect the cloud with hibernate app.--costly
+
+-----------------------------------------------------
+To design hibernate app,we need to follow below steps.
+1)create a project using maven----completed
+2)Add required dependencies and cfg file ------completed
+3)create a pojo and dao as required.---pojo creation completed
+4)create main class and write the code for accessing the backend.
+5)close the session with database.
+
+
+Requirement1:
+create a Hibernate app which should pull the data from student table.
+Student: 
+student name varcahr---30
+idno----number
+standard-----string
+marks-----no
+
+
+In hibernate/JPA,we are going to use Annotations for providing meta data.
+
+Annotations starts with @ symbol.
+
+
+In jpa, for primary key we use @id.
+@id indicates primary key
+@column---- means it is a db column
+@Entity ---- means it is a table
+
+hibernate can convert your pojo class to table.
+Db table ----->pojo class
+
+javax.persistence is a JPA package.
+
+>>Hibernate will take your pojo class as a input and then it will convert pojo class to db table.
+If db table is already existing,then hibernate will not create table,it will just use the existing table.
+This feature is possible through  auto-schema generation in hibernate nd concept is called as ORM.
+Object realation mapping.
+   <property name="hbm2ddl.auto">update</property> 
+
+>>once pojo and dao classes are ready,we need to create main class.
+
+>If any java app want to perform any transaction on db,first it needs to create session.
+Session creation is mandetory.
+
+1)After session object creation is done,we need to initiate transaction.(session will be created using cfg file)
+hibernate will load cfg file into memory before creating connection/session with the database.
+2)After transaction is initialized,we need perform transactions.
+3)Once db transaction is completed,we need to perform commit or rollback.
+4)Once done we need to close connection with db.
+
+hibernate 5.x and any version > 4.x.x version except 4.0.0:
+            1)configObj.configure("hibernate.cfg.xml");//cfg file will be loaded into memory by hibernate bootstrapper
+			2)ServiceRegistry  serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build(); 
+			Hibernate will register and active/initiate db services after reading cfg file from memory
+			3) SessionFactoryObj = configObj.buildSessionFactory(serviceRegistryObj);
+			   sessionObj =sessionFactoryObj.openSession();
+			3rd line indicates,we are asking hibernate to grant a session object from session factory ie from session pool and then  it opens connection with db.
+			4)sessionObj.beginTransaction();
+			Once 3rd step is completed successfully,we need to initiate/begin transaction.
+			5)Write your logic and perform crud operations.
+			6)close session and transaction objects.
+	We need to use save method to save a record using hibernate.
+------------------------------->
+HQL
+Named Queries/criteria API 
+cache and types===improving performance of hibernate application
+CRUD Operations----DAO and DAI
+
+Native SQL Queries:
+==============
+>>Native sql queries are mainly used for supporting older databasess/apps.
+>Example: Sybase is of older version.And customer is not ready to upgarde to latest version.
+
+In this scenario,can we change the database?All queries might now work in older versions.Then hw do youu handle?
+sol) native Sql queries
+
+we need to use createSQLQuery() method.
+To pull the data using nativesql,we are going to use list() method.
+
+>>>>>In hibernate query language,
+>HQL we are writing queries on Objects/pojos.
+Table is called as Object or Enity.
+>In hql we are going to write hql queries instead of sql to retrieve the data from database.
+>>hQl is database independent.
+Till now,if we want to fetch the data from dbs,we are using select.
+"select * from tablename";---db
+
+in hql, "from tablename";---objects
+
+<build>
+
+ 
+
+<plugins>
+
+<plugin>
+
+<artifactId>maven-compiler-plugin</artifactId>
+
+<version>3.5.1</version>
+
+<configuration>
+
+<source>17</source>
+
+<target>17</target>
+
+</configuration>
+
+</plugin>
+
+</plugins>
+
+</build>
+Native SQl----createSQLQuery
+HQl----createQuery
+
+In hql,list is used fpr fetching data from database table.
+aggregate functions:
+
+max,min,sum...etc
+
+In hql,we are going to use setParameter method with Syntax: :variablename.for giving values at run time.
+
+Assume you are having 1lakh records in db,then can we display all records at a time on screen?
+No we cannot.If we try the app might crash.
+
+To handle this suitation,we need to use pagination feature.
+
+Note: use pagination if we are having more records ie >=2 digits
+>>>>>>>>>>>>>>>>
+
+If we are running same query multiple times,then will happen on memory?
+ans)Every time if run query,below steps will,be performed.
+1)Query will be parsed by sql parser.
+2)Execute the query
+3)fetch the results into memory.
+
+If we are running same query multiple time,then do we need to run that query multiple times or one time is sufficient?
+ans)one time is sufficent to save cpu time and memory.To acjieve this we need to use cache.
+
+>Hibernate supports 2 types of caching mechanisms.Cache is for handling sessions in hibernate.
+1)1st level caching--1st level caching is enabled by default.
+2) 2nd level or 3rd party caching.
+
+Use 2nd level when wver we are working on banking,insurance or the projects with multple Queries.
+
+Below are the 3rd party caching tools:
+
+EH cache
+Swarn cache 
+mem-cache---more secure and resilient
+  filters,session management and caching
+===============================================================
+Day 6(June 15th)
+==================
+>Hibernate basics
+Hql,Native sql,cache
+
+Apache Tomcat 7.x or 8.x for Spring MVC
+<user username="tomcat" password="pass" roles="admin-gui,manager-gui"/>
+
+sudo chmod -R 755 /opt/tomcat/apache-tomcat-9.0.24/
+
+Reason 1: Spring MVC
+Reason 2: Example on JSP+servlets+Hibernate
+
+For springboot,no need of any tomcat server.Because in springboot we will have inbuilt tomcat.
+--------------------------------------->
+>Hibernate DAO example
+>>When we are working on ORM frameworks or at persistence layers,always we need to work on DAO Design patterns.
+
+Evry DAO shld have DAI files.
+
+>DAI stands for data access Interfaces.
+
+
+in dao ,we are going to write logic for CRUD operation on database.
+create(){}
+display(){}
+delete(){}
+update(){}
+
+
+>>>In Spring,IF we want to Integrate Spring+Hibernate,then we need follow below rules.
+1)DAO implementation shold be written in a separate package.
+2)We need to use "HibernateTemplate" feature to integrate Spring with Hibernate.
+3)We neeed to perform testing for DAO layer from scratch.
+
+Note: IN Java full stack or in any development,never use System.out.println.It leads to performance issues in projects.
+In place of System.out.println, use log4j or sl4j libraries.
+
+In log4j,messages can be displaye in different ways/modes.
+Info
+warning
+error
+critical
+Fatal
+
+Hi Srini? what type of message is this? is it error or info---info
+
+404 error? error
+
+Please wear helmet while riding bike----> warning
+
+Hibernate+Log4j
+
+Hibernate+Spring MVC+log4j
+
+Steps to implement DAO class:
+-----------------------------------
+1)Create a package for DAO interfaces.
+Exmaple: com.training.daointerfaces
+2)Create a package for DAO interfacesimplementation.
+Exmaple: com.training.daointerfacesImpl
+3)Create a POJO class for your requirement.
+4)Add required  CRUD methods under dao interface.
+5)Write dao implementatiosn in DAO interfaceimplementation classes.
+6)Once implementation of dao is completed,we need to test the code.
+
+Requirement:
+If the input is'i',then create record method shld be called in DAO.
+If the input is'd',then delete record method shld be called.in DAO.
+If the input is'u',then update record method shld be called.in DAO.
+
+>>To perform code quality testing,we are going to use "SONAR QUBE".This is mainly used in testing and DEVOPS.
+
+
+Sonarqube will scan your entire code for vulnarabilities(security checks),duplicate code and coding violations.
+
+If your code quality is <60%,then  your code cannot be pushed to server.simply it will be rejected.0%
+
+Always make sure code quality shld be >70%
+https://snyk.io/---for security
+Sonarqube practicality--sunday
+>first we need to create github account.After that we need to login into sonarcloud using github credentials.
+===================
+Spring MVC:
+----------
+>MVC Stands for Model view controller.
+>Spring MVC is used for desgining web apps.
+>spring MVC follows MVC architecture.
+>Spring MVC is part of Spring framework.
+M--Model---POjo and DAO
+V--View---html,jsp
+C--Controller---->Servlets
+Can we design desktop app using SpringMVC?
+Ans)No
+
+Step1: Request will come from browser to main controller.In Spring Dispatcher Servlet is called as main Controller.This is also called as front controller.
+Step2:request be forwareded to Handler mapping(xml file) it will check concerned request and the main controller will the forwward the request to child controller.
+Step3:Child controller based on the request,it will return MOdelView object to main controller.
+Step4:After checking the Modelview object main controller will forward to view resolver and then the page will be redirected to concerned webpage.
+
+>To work on Spring MVC we need below dependencies: junit,Spring web mvc and Serverlet jars
+
+Note: Dont use SpringMVC for designing small web apps.
+
+>>Dispatcherservlet is written in servlet language.
+
+disadvantages of Spring MVC?
+ans) jar issues are common in spring mvc
+we need to perform more configurations
+
+>>We are going to configure dispatcher servlet in web.xml file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
